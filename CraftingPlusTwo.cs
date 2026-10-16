@@ -2,11 +2,11 @@
 using BepInEx;
 using HarmonyLib;
 
-namespace MaxLevelMistlands
+namespace CraftingPlusTwo
 {
-    [BepInPlugin("MaxLevelMistlands", "Max Level Mistlands", "1.1.0")]
+    [BepInPlugin("CraftingPlusTwo", "Crafting Plus Two", "1.1.0")]
     [BepInProcess("valheim.exe")]
-    public class ValheimMod : BaseUnityPlugin
+    public class CraftingPlusTwoMod : BaseUnityPlugin
     {
         // Station names as serialized in the 1.0 prefabs (CraftingStation.m_name).
         private static readonly string[] TargetStations =
@@ -24,13 +24,13 @@ namespace MaxLevelMistlands
 
         private void Awake()
         {
-            new Harmony("MaxLevelMistlands").PatchAll();
+            new Harmony("CraftingPlusTwo").PatchAll();
             Logger.LogInfo($"Successfully patched Galdr Table/Black Forge workaround! "
                 + $"Adding {LevelBonus} levels to both (a fresh one reads 3, a fully extended one 7).");
         }
 
         [HarmonyPatch(typeof(CraftingStation), nameof(CraftingStation.GetLevel))]
-        internal class Mistlands_Patch
+        internal class StationLevel_Patch
         {
             [HarmonyPostfix]
             static void Postfix(ref int __result, CraftingStation __instance)

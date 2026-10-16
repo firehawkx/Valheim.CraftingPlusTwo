@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <AssemblyName>MaxLevelMistlands</AssemblyName>
-    <RootNamespace>MaxLevelMistlands</RootNamespace>
+    <AssemblyName>CraftingPlusTwo</AssemblyName>
+    <RootNamespace>CraftingPlusTwo</RootNamespace>
     <Version>1.1.0</Version>
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
-    <Product>MaxLevelMistlands</Product>
+    <Product>CraftingPlusTwo</Product>
     <Description>Raises the Galdr Table and Black Forge crafting station level by 2 so gear can be maxed.</Description>
   </PropertyGroup>
 

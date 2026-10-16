@@ -1,14 +1,20 @@
 # Valheim.MaxLevelMistlands
-A mod for Valheim that increases the base level of the Black Forge and Galdr Table by 2, so players can max out their gear
+A mod for Valheim that adds 2 levels to the Black Forge and Galdr Table, so gear can be upgraded all the way to quality 4.
 
-# How to set up
-Get the BepinEx pack for Valheim, create a /Libs folder, and copy the following .dlls into it
+Since 1.0 a crafting station's level is derived from the extension pieces attached to it (`1 + extensions`), which dropped these two to a starting level of 1 and a ceiling of 6 (Black Forge) / 5 (Galdr Table). The final quality-4 upgrade asks for level 7, so it cannot be reached at all without this mod. The bonus keeps the pre-1.0 feel: 3 when you build the station, climbing with every extension you attach, up to 7 once the Galdr Table is fully extended.
 
-![image](https://user-images.githubusercontent.com/10536628/224829086-61540ecc-cb97-4b15-b079-8b5c37199839.png)
+# How to build
+Requires the [.NET Framework 4.8 developer pack](https://dotnet.microsoft.com/download/dotnet-framework) and a local Valheim install with [BepInEx 5](https://github.com/BepInEx/BepInEx/releases).
 
-These can be found at
-BepInEx\core\0Harmony.dll
-BepInEx\core\BepInEx.dll
-valheim_Data\Managed\assembly_valheim.dll
-unstripped_corlib\UnityEngine.dll
-unstripped_corlib\UnityEngine.CoreModule.dll
+```powershell
+dotnet build MaxLevelMistlands.csproj -c Release
+```
+
+The build reads `BepInEx.dll` and `0Harmony.dll` from `BepInEx\core` and the game assemblies from `valheim_Data\Managed`, then copies the result into `BepInEx\plugins`. If your game lives elsewhere, point the build at it:
+
+```powershell
+dotnet build MaxLevelMistlands.csproj -c Release -p:ValheimDir=C:\Steam\steamapps\common\Valheim
+```
+
+Built for Valheim 1.0.
+

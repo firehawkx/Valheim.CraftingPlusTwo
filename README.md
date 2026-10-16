@@ -16,4 +16,6 @@ The build reads `BepInEx.dll` and `0Harmony.dll` from `BepInEx\core` and the gam
 dotnet build CraftingPlusTwo.csproj -c Release -p:ValheimDir=C:\Steam\steamapps\common\Valheim
 ```
 
-Built for Valheim 1.0.
+ReBuilt for Valheim 1.0.
+
+Inspired and Based on PeterD23 Valheim.MaxLevelMistlands mod.
